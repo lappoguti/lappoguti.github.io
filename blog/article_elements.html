@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>article elements</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<div class="with-sidebar" data-dir-col data-spacing="0rem">
+<header class="box">
+    <nav class="cluster">
+        <h1><a href="/">🏠</a></h1>
+    </nav>
+</header>
+<main class="box">
+<article class="stack center" data-measure="calc(36 * var(--s1)">
+
+<h2>Headings</h2>
+<section class="stack" data-spacing="var(--s-1)">
+
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+
+<p>p</p>
+</section>
+
+<h2>Asides</h2>
+<section class="stack">
+<div class="cluster">
+<p>Sometimes in the normal flow of an article you might have something that you want to say thats related but not part of the main topic. In these cases a margin note can be particularly useful. They display information to the side of the content so that inspecting it requires just a shift of the eyes. This is in contrast to footnotes which work much worse on web browsers. The reason being that a web browser is generally one continuous page so you would need to scroll all the way down to read a footnote.</p>
+
+<aside class="stack">
+<details name="a" open>
+<summary>Hello 👋!</summary>
+<p>I'm a margin note, nice to meet you!</p>
+</details>
+
+</aside>
+</div>
+</section>
+
+<h2>Quotes</h2>
+<section class="stack">
+<figure class="stack">
+<blockquote>
+<p>Quotes help us understand, inspire, motivate, clarify and show our approach to things around, this is why people and I love quotes.</p>
+</blockquote>
+<figcaption>
+- <cite>Takyou Allah Cheikh Malaynine</cite>
+</figcaption>
+</figure>
+</section>
+
+<h2>Figures</h2>
+<section>
+<figure class="stack">
+<img 
+    src="https://upload.wikimedia.org/wikipedia/en/b/b5/HungryCaterpillar.JPG"
+    alt="Hungry caterpillar"
+/>
+<figcaption>A picture can be worth a thousand words.</figcaption>
+</figure>
+</section>
+
+</article>
+</main>
+</div>
+</body>
+</html>
