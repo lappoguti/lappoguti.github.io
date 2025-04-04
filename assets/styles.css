@@ -1,0 +1,181 @@
+/* Text */
+:root {
+    font-family: "Merriweather", serif;
+}
+
+/* Sizing */
+:root {
+    --ratio: 1.414;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+
+    --measure: calc(25 * var(--s1));
+}
+
+/* Dark Mode Styling */
+@media (prefers-color-scheme: light) {
+    :root {
+        --surface: #fffff8;
+        --surface-container: #ddd;
+        --on-surface: #111111;
+    }
+}
+
+/* Light Mode Styling */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --surface: #151515;
+        --surface-container: #111;
+        --on-surface: #ddd;
+    }
+}
+
+:root {
+    background-color: var(--surface);
+    color: var(--on-surface);
+}
+
+* {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    background-color: inherit;
+    margin: 0;
+}
+
+.box {
+    padding: attr(data-padding type(<length>), var(--s1));
+}
+
+.stack > * {
+    /* top and bottom margins in horizontal-tb writing mode */
+    margin-block: 0;
+}
+
+.stack {
+    --stack-spacing: attr(data-spacing type(<length>), var(--s1));
+}
+
+.stack > * + * {
+    margin-block-start: var(--stack-spacing);
+}
+
+.center {
+    padding-inline-start: var(--s1);
+    padding-inline-end: var(--s1);
+    box-sizing: content-box;
+    max-inline-size: attr(data-measure type(<length>), 60ch);
+    margin-inline: auto;
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: attr(data-spacing type(<length>), var(--s1));
+}
+
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: attr(data-spacing type(<length>), var(--s1));
+    height: 100%;
+    width: 100%;
+}
+
+.with-sidebar[data-dir-col] {
+    flex-direction: column;
+}
+
+.with-sidebar > :first-child {
+    flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 50%;
+    overflow-y:auto
+}
+
+img {
+    max-inline-size: 100%;
+}
+
+label {
+    display: block;
+}
+
+header {
+    border-bottom: solid;
+}
+
+nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+aside {
+    font-size: var(--s-1);
+    --measure: calc(10 * var(--s1));
+}
+
+h1 {
+    font-size: var(--s3);
+}
+
+h2 {
+    font-size: var(--s2);
+}
+
+h3 {
+    font-size: var(--s1);
+}
+
+p {
+    font-size: var(--s0);
+    line-height: var(--s1);
+}
+
+h1, h2, h3, p {
+    max-inline-size: var(--measure);
+}
+
+blockquote > p {
+    font-style: italic;
+    font-weight: 300;
+}
+
+blockquote + figcaption {
+    text-align: end;
+}
+
+figure {
+    max-inline-size: var(--measure);
+}
+
+figcaption {
+    font-size: var(--s-1);
+}
+
+.subtitle {
+    font-size: var(--s1);
+    font-weight: 300;
+    font-style: italic;
+}

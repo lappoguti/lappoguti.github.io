@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>lappoguti</title>
+    <title>Diego</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <div class="with-sidebar" data-dir-col data-spacing="0rem">
+        <header class="box">
+            <nav class="cluster">
+                <h1><a href="/">@diegoguti</a></h1>
+            </nav>
+        </header>
+        <main class="box">
+            <div class="center">
+                <div class="stack">
+                    {{range .}}
+                    <div class="box">
+                        <div class="stack" data-spacing="var(--s-1)">
+                            <p><a href="/blog/{{ .Name }}">{{ .Name }}</a></p>
+                        </div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
